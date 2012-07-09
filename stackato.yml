@@ -1,0 +1,12 @@
+name: hastebin
+
+framework:
+  type: node
+
+mem: 64M
+
+services:
+  hastebin-redis: redis
+
+ignores: 
+  - .git

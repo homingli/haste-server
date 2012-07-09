@@ -9,8 +9,8 @@ var DocumentHandler = require('./lib/document_handler');
 
 // Load the configuration and set some defaults
 var config = JSON.parse(fs.readFileSync('config.js', 'utf8'));
-config.port = config.port || 7777;
-config.host = config.host || 'localhost';
+config.port = process.env.PORT || config.port || 7777;
+config.host = process.env.VCAP_APP_HOST || config.host || 'localhost';
 
 // Set up the logger
 if (config.logging) {
@@ -28,10 +28,7 @@ if (config.logging) {
 
 // build the store from the config on-demand - so that we don't load it
 // for statics
-if (!config.storage) {
-  config.storage = { type: 'file' };
-}
-if (!config.storage.type) {
+if (!config.storage || !config.storage.type) {
   config.storage.type = 'file';
 }
 var Store = require('./lib/document_stores/' + config.storage.type);

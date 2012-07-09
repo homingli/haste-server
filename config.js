@@ -1,9 +1,9 @@
 {
 
   "host": "localhost",
-  "port": 7777,
+  "port": 3000,
 
-  "keyLength": 10,
+  "keyLength": 5,
 
   "maxLength": 400000,
 
@@ -25,8 +25,6 @@
 
   "storage": {
     "type": "redis",
-    "host": "localhost",
-    "port": 6379,
     "db": 2,
     "expire": 2592000
   },
