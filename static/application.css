@@ -8,10 +8,12 @@ body {
 
 textarea {
 	background: transparent;
-	border: 0px;
+	border: 2px solid #000;
 	color: #fff;
 	padding: 0px;
-	width: 100%;
+    width: -moz-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
 	height: 100%;
 	font-family: monospace;
 	outline: none;
@@ -31,6 +33,7 @@ textarea {
 	font-size: 13px;
 	font-family: monospace;
 	text-align: right;
+    line-height: 16px;
 }
 
 /* code box when locked */
@@ -38,16 +41,15 @@ textarea {
 #box {
 	padding: 0px;
 	margin: 0px;
-	width: 100%;
+    width: -moz-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
 	border: 0px;
 	outline: none;
 	font-size: 13px;
-	/* padding-right: 360px; */
-}
-
-#box code {
-	padding: 0px;
+    line-height: 16px;
 	background: transparent !important; /* don't hide hastebox */
+	/* padding-right: 360px; */
 }
 
 /* key */
@@ -99,7 +101,7 @@ textarea {
 	cursor: pointer;
 }
 
-#pointer {
+/* #pointer {
 	display: block;
 	height: 5px;
 	width: 10px;
@@ -109,7 +111,7 @@ textarea {
 	margin: auto;
 	left: 0px;
 	right: 0px;
-}
+}*/
 
 #box3, #messages li {
 	background: #173e48;
@@ -131,7 +133,7 @@ textarea {
 
 #box2 .function.save { background-position: -5px top; }
 #box2 .function.enabled.save { background-position: -5px center; }
-#box2 .function.enabled.save:hover { background-position: -5px bottom; }
+#box2 .function.enabled.save:hover { background-position: -5px bottom;}
 
 #box2 .function.new { background-position: -42px top; }
 #box2 .function.enabled.new { background-position: -42px center; }

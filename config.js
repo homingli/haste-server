@@ -24,8 +24,9 @@
   },
 
   "storage": {
-    "type": "redis",
-    "db": 2,
+    "type": "memcached",
+    "host": "",
+    "port": "",
     "expire": 2592000
   },
 
