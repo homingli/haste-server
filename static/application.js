@@ -80,6 +80,8 @@ var haste = function(appName, options) {
   if (!options.twitter) {
     $('#box2 .twitter').hide();
   }
+  //password feature not ready
+  $('#box4').hide();
 };
 
 // Set the page title - include the appName
@@ -178,7 +180,7 @@ haste.prototype.loadDocument = function(key) {
   _this.doc = new haste_document();
   _this.doc.load(parts[0], function(ret) {
     if (ret) {
-      _this.$box.html(ret.value);
+      _this.$box.html(_this.doc.htmlEscape(ret.value));
       _this.setTitle(ret.key);
       _this.fullKey();
       //_this.$textarea.val('').hide();
@@ -212,8 +214,7 @@ haste.prototype.lockDocument = function() {
       _this.showMessage(err.message, 'error');
     }
     else if (ret) {
-      _this.$box.html(ret.value);
-      console.log(ret.value);
+      _this.$box.html(_this.doc.htmlEscape(ret.value));
       _this.setTitle(ret.key);
       var file = '/' + ret.key;
 //      if (ret.language) {
