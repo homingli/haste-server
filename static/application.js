@@ -82,6 +82,7 @@ var haste = function(appName, options) {
   }
   //password feature not ready
   $('#box4').hide();
+  $('#box5').hide();
 };
 
 // Set the page title - include the appName
@@ -137,6 +138,7 @@ haste.prototype.newDocument = function(hideHistory) {
   this.$textarea.val('').show('fast', function() {
     this.focus();
   });
+  $('#box5').hide();
 };
 
 // Map of common extensions

@@ -180,4 +180,25 @@ textarea {
 	padding: 0px 5px;
 }
 
+#box5 a, #box5 a{
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	color:  #08323c;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    text-decoration: none;
+    text-align:center;
+    padding: 10px 5px;
+	background: #08323c;
+}
 
+#box5 a:hover, #box5 a.hover{
+	color: #666;
+	background: #333;
+}
+
+#box5 a:active, #box5 a.active{
+	background: #000;
+}

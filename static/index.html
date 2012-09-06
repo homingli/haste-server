@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 <script type="text/javascript" src="google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="zclip/jquery.zclip.min.js"></script>
 
 		<script type="text/javascript" src="application.min.js"></script>
 		<script type="text/javascript">
@@ -18,8 +19,12 @@
             // Handle pops
             var handlePop = function(evt) {
                 var path = evt.target.location.pathname;
-                if (path === '/') { app.newDocument(true); }
-                else { app.loadDocument(path.substring(1, path.length)); }
+                if (path === '/') {
+                    app.newDocument(true);
+                } else {
+                    app.loadDocument(path.substring(1, path.length));
+                    $('#box5').show();
+                }
             };
             // Set up the pop state to handle loads, skipping the first load
             // to make chrome behave like others:
@@ -33,7 +38,18 @@
             $(function() {
                 app = new haste('hastebin', { twitter: false });
                 handlePop({ target: window });
-            });        
+
+                $('a#copy-box').zclip({
+                    path:'zclip/ZeroClipboard.swf',
+                    copy:function(){
+                        return $.map($("#box ol li"), function(elem, index){
+                            return $(elem).children().text();
+                        }).join('\n');
+                    },
+                    afterCopy:function(){} // to override default alert
+                });
+            });
+
 -->
         </script>
         
@@ -42,6 +58,9 @@
 	</head>
 
 	<body>
+		<div id="box5">
+            <a id="copy-box" href="#">CLICK<br/>TO</br>COPY<br/>TEXT</a>
+		</div>
 		<ul id="messages"></ul>
 		<div id="box4">
 			<div class="label">Enter Password: <input id="pw" type="password" /></div>
@@ -63,7 +82,6 @@
 				<div class="shortcut"></div>
 			</div>
 		</div>
-
 		<pre id="box" style="display:none;" tabindex="0" class="prettyprint linenums:1"></pre>
 		<textarea spellcheck="false" style="display:none;"></textarea>
 
