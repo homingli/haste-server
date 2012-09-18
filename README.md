@@ -1,3 +1,16 @@
+
+## Post-Fork Modifications:
+
+- works on ActiveState Stackato
+- uses google-code-prettify instead of highlight.js
+- fixed wordwrap issue
+- added copy bar on the left
+
+
+<br />
+<br />
+<br />
+
 # Haste
 
 Haste is an open-source pastebin software written in node.js, which is easily
