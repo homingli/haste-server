@@ -227,6 +227,7 @@ haste.prototype.lockDocument = function() {
       _this.$textarea.val('').hide();
       _this.$box.show().focus();
       prettyPrint();
+      $('#box5').show();
     }
   });
 };

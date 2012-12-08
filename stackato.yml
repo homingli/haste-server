@@ -6,7 +6,7 @@ framework:
 mem: 64M
 
 services:
-  hastebin-mc: memcached
+  ${name}-mc: memcached
 
 ignores: 
   - .git
